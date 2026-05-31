@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Weather app</title>
+  </head>
+
+  <body>
+    <!-- mobile first-->
+
+    <header>
+      <nav>
+        <img src="./assets/images/logo.svg" alt="" />
+        <div class="unit">
+          <img src="./assets/images/icon-units.svg" alt="" />
+          <p>Unit</p>
+          <img src="./assets/images/icon-dropdown.svg" alt="" />
+        </div>
+      </nav>
+      <div class="hero">
+        <div class="hero-content">
+          <h1>How's the sky looking today?</h1>
+        </div>
+      </div>
+    </header>
+    <section class="search-and-btn">
+      <div class="search-input">
+        <input type="text" placeholder="Search for a place..." />
+        <img src="./assets/images/icon-search.svg" alt="" />
+      </div>
+      <div class="search-btn">
+        <button>Search</button>
+      </div>
+    </section>
+    <div class="larg-screen" id="all-content">
+      <div>
+        <section class="banner-today" id="banner-today">
+          <!-- have content -->
+          <div class="banner-today-content">
+            <img src="./assets/images/bg-today-small.svg" alt="" />
+            <div class="larg-sreen-banner-today">
+              <div>
+                <h1>Berlin, <span>Germany</span></h1>
+                <p>Tuesday, <span>Aug 5, </span><span>2025</span></p>
+              </div>
+              <div class="weather">
+                <div class="weather-content">
+                  <img src="./assets/images/icon-sunny.webp" alt="" />
+                  <h1>68<sup> o</sup></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- loading (js) (defualt hidden)-->
+          <div class="banner-today-content" id="banner-today-content-loading">
+            <img src="./assets/images/icon-loading.svg" alt="" />
+          </div>
+        </section>
+        <section class="details">
+          <div class="details-content">
+            <p class="p-title">Fell Like</p>
+            <p class="p-text temperature"></p>
+          </div>
+          <div class="details-content">
+            <p class="p-title">Humidity</p>
+            <p class="p-text humidity"></p>
+          </div>
+          <div class="details-content">
+            <p class="p-title">Wind</p>
+            <p class="p-text wind"></p>
+          </div>
+          <div class="details-content">
+            <p class="p-title">Precipitation</p>
+            <p class="p-text">0 mm</p>
+          </div>
+        </section>
+        <section class="daily-forecast">
+          <p>Daily forecast</p>
+          <div class="daily-forecast-content">
+            <div class="daily-forecast-item">
+              <p class="daily-forecast-item-title">Tue</p>
+              <img src="./assets/images/icon-storm.webp" alt="" />
+              <div class="daily-forecast-weather">
+                <p>24 <sup>o</sup></p>
+                <p>15 <sup>o</sup></p>
+              </div>
+            </div>
+            <div class="daily-forecast-item">
+              <p class="daily-forecast-item-title">Tue</p>
+              <img src="./assets/images/icon-overcast.webp" alt="" />
+              <div class="daily-forecast-weather">
+                <p>24 <sup>o</sup></p>
+                <p>15 <sup>o</sup></p>
+              </div>
+            </div>
+            <div class="daily-forecast-item">
+              <p class="daily-forecast-item-title">Tue</p>
+              <img src="./assets/images/icon-partly-cloudy.webp" alt="" />
+              <div class="daily-forecast-weather">
+                <p>24 <sup>o</sup></p>
+                <p>15 <sup>o</sup></p>
+              </div>
+            </div>
+            <div class="daily-forecast-item">
+              <p class="daily-forecast-item-title">Tue</p>
+              <img src="./assets/images/icon-drizzle.webp" alt="" />
+              <div class="daily-forecast-weather">
+                <p>24 <sup>o</sup></p>
+                <p>15 <sup>o</sup></p>
+              </div>
+            </div>
+            <div class="daily-forecast-item">
+              <p class="daily-forecast-item-title">Tue</p>
+              <img src="./assets/images/icon-rain.webp" alt="" />
+              <div class="daily-forecast-weather">
+                <p>24 <sup>o</sup></p>
+                <p>15 <sup>o</sup></p>
+              </div>
+            </div>
+            <div class="daily-forecast-item">
+              <p class="daily-forecast-item-title">Tue</p>
+              <img src="./assets/images/icon-sunny.webp" alt="" />
+              <div class="daily-forecast-weather">
+                <p>24 <sup>o</sup></p>
+                <p>15 <sup>o</sup></p>
+              </div>
+            </div>
+            <div class="daily-forecast-item">
+              <p class="daily-forecast-item-title">Tue</p>
+              <img src="./assets/images/icon-fog.webp" alt="" />
+              <div class="daily-forecast-weather">
+                <p>24 <sup>o</sup></p>
+                <p>15 <sup>o</sup></p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="hourly-forecast">
+        <div class="hourly-forecast-title">
+          <p>Hourly forecast</p>
+          <div class="hourly-forecast-action">
+            <select name="day-selected" id="day-selected">
+              <option value="mon">Monday</option>
+              <option value="tue">Tuesday</option>
+              <option value="wed">Wednesday</option>
+              <option value="thu">thursday</option>
+              <option value="fri">Friday</option>
+              <option value="sat">Saturday</option>
+              <option value="sun">Sunday</option>
+            </select>
+            <img src="./assets/images/icon-dropdown.svg" alt="" />
+          </div>
+        </div>
+        <div class="hourly-forecast-content">
+          <div class="hourly-forecast-item">
+            <div class="hourly-forecast-item-title">
+              <img src="./assets/images/icon-drizzle.webp" alt="" />
+              <p>3 PM</p>
+            </div>
+            <p>20<sup>o</sup></p>
+          </div>
+          <div class="hourly-forecast-item">
+            <div class="hourly-forecast-item-title">
+              <img src="./assets/images/icon-drizzle.webp" alt="" />
+              <p>3 PM</p>
+            </div>
+            <p>20<sup>o</sup></p>
+          </div>
+          <div class="hourly-forecast-item">
+            <div class="hourly-forecast-item-title">
+              <img src="./assets/images/icon-drizzle.webp" alt="" />
+              <p>3 PM</p>
+            </div>
+            <p>20<sup>o</sup></p>
+          </div>
+          <div class="hourly-forecast-item">
+            <div class="hourly-forecast-item-title">
+              <img src="./assets/images/icon-drizzle.webp" alt="" />
+              <p>3 PM</p>
+            </div>
+            <p>20<sup>o</sup></p>
+          </div>
+          <div class="hourly-forecast-item">
+            <div class="hourly-forecast-item-title">
+              <img src="./assets/images/icon-drizzle.webp" alt="" />
+              <p>3 PM</p>
+            </div>
+            <p>20<sup>o</sup></p>
+          </div>
+          <div class="hourly-forecast-item">
+            <div class="hourly-forecast-item-title">
+              <img src="./assets/images/icon-drizzle.webp" alt="" />
+              <p>3 PM</p>
+            </div>
+            <p>20<sup>o</sup></p>
+          </div>
+          <div class="hourly-forecast-item">
+            <div class="hourly-forecast-item-title">
+              <img src="./assets/images/icon-drizzle.webp" alt="" />
+              <p>3 PM</p>
+            </div>
+            <p>20<sup>o</sup></p>
+          </div>
+          <div class="hourly-forecast-item">
+            <div class="hourly-forecast-item-title">
+              <img src="./assets/images/icon-drizzle.webp" alt="" />
+              <p>3 PM</p>
+            </div>
+            <p>20<sup>o</sup></p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div>
+      <!-- api erro modal -->
+      <section class="api-error" id="api-error">
+        <img src="./assets/images/icon-error.svg" alt="" />
+        <h2>Something went wrong</h2>
+        <p>
+          We couldn't connect to the server (API error). Please try again in a
+          few moments
+        </p>
+        <div class="api-error-retry">
+          <img src="./assets/images/icon-retry.svg" alt="" />
+          <p>Retry</p>
+        </div>
+      </section>
+    </div>
+    <footer class="attribution">
+      Challenge by
+      <a target="_blank" href="https://www.frontendmentor.io?ref=challenge"
+        >Frontend Mentor</a
+      >. Coded by
+      <a target="_blank" href="https://kimsann.netlify.app">kimsann</a>.
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
