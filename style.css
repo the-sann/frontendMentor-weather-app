@@ -92,12 +92,23 @@ nav {
   margin: 20px 0;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .banner-today-content {
   width: 100%;
   position: relative;
+}
+.larg-sreen-banner-today {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
 }
 .banner-today-content img {
   height: auto;
@@ -106,25 +117,24 @@ nav {
 }
 .banner-today-title {
   width: 100%;
-  position: absolute;
-  top: 40px;
   text-align: center;
 }
 .weather {
-  position: absolute;
+  position: static;
   width: 100%;
-  bottom: 40px;
 }
 .weather-content {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 .weather-content img {
-  width: 150px;
+  width: 180px;
+  height: 180px;
 }
 .weather-content h1 {
-  font-size: 90px;
+  font-size: 56px;
 }
 .details {
   display: grid;
@@ -264,6 +274,7 @@ nav {
     width: 100%;
     height: 400px;
     object-fit: cover;
+    border-radius: 20px;
   }
   .search-and-btn {
     display: flex;
@@ -274,13 +285,12 @@ nav {
   .search-input {
     width: 500px;
   }
-  .banner-today-content img {
-    border-radius: 24px;
-  }
+
   .larg-sreen-banner-today {
     position: absolute;
     inset: 0;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
