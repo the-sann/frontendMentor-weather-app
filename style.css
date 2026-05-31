@@ -134,7 +134,7 @@ nav {
   height: 180px;
 }
 .weather-content h1 {
-  font-size: 32px;
+  font-size: 56px;
 }
 .details {
   display: grid;
@@ -313,6 +313,9 @@ nav {
   .weather-content img {
     width: 200px;
     height: 200px;
+  }
+  .weather-content h1 {
+    font-size: 90px;
   }
 }
 
